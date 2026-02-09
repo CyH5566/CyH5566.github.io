@@ -9,16 +9,16 @@
         body {
             font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* 改為從頂部開始，避免內容過長被遮住 */
             min-height: 100vh;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         .container {
-            max-width: 450px;
-            width: 90%;
+            max-width: 500px;
+            width: 100%;
             background: white;
             padding: 40px 20px;
             border-radius: 30px;
@@ -36,7 +36,7 @@
             margin-bottom: 30px;
         }
 
-        /* 按鈕通用樣式 */
+        /* 按鈕樣式 */
         .btn {
             display: flex;
             align-items: center;
@@ -49,8 +49,6 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
-        /* Apple Store 按鈕 (主按鈕) */
         .apple-btn {
             background-color: #000;
             color: #fff;
@@ -61,20 +59,19 @@
             transform: scale(1.02);
         }
 
-        /* Threads 按鈕 (次按鈕) */
-        .threads-btn {
-            background-color: transparent;
-            color: #000;
-            border: 1px solid #000;
-            font-size: 0.95rem;
+        /* 貼文嵌入區塊容器 */
+        .embed-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: left; /* 貼文內容通常靠左比較好看 */
         }
-        .threads-btn:hover {
-            background-color: #f8f9fa;
-            transform: scale(1.02);
-        }
-
-        i {
-            font-size: 1.3rem;
+        .embed-title {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 15px;
+            display: block;
         }
     </style>
 </head>
@@ -88,10 +85,14 @@
             在 App Store 下載
         </a>
 
-        <a class="btn threads-btn" href="https://www.threads.net/@homiumiu_68" target="_blank">
-            <i class="fa-brands fa-threads"></i>
-            或是到 Thread 留言或是查看最新更新
-        </a>
+        <div class="embed-section">
+            <span class="embed-title">最新動態</span>
+            
+            <blockquote class="threads-embed" data-request_type="post" data-pid="DUhX06sAWnb" data-user-id="64825946358" data-base_url="https://www.threads.net">
+                <a href="https://www.threads.net/@homiumiu_68/post/DUhX06sAWnb">或是到 Thread 留言或是查看最新更新</a>
+            </blockquote>
+            <script async src="https://www.threads.net/embed.js"></script>
+            </div>
     </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +9,16 @@
         body {
             font-family: "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         .container {
-            max-width: 500px;
-            width: 100%;
+            max-width: 450px;
+            width: 90%;
             background: white;
             padding: 40px 20px;
             border-radius: 30px;
@@ -28,13 +28,15 @@
         h1 {
             font-size: 2rem;
             color: #2d3436;
-            margin: 0 0 10px 0;
+            margin-bottom: 5px;
         }
         .subtitle {
             color: #636e72;
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
+
+        /* 按鈕通用樣式 */
         .btn {
             display: flex;
             align-items: center;
@@ -47,6 +49,8 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
+
+        /* Apple Store 按鈕 (主按鈕) */
         .apple-btn {
             background-color: #000;
             color: #fff;
@@ -56,23 +60,27 @@
             background-color: #222;
             transform: scale(1.02);
         }
-        .embed-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            min-height: 200px; /* 預留高度減少跳動 */
+
+        /* Threads 按鈕 (次按鈕) */
+        .threads-btn {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            font-size: 0.95rem;
         }
-        .embed-title {
-            font-size: 0.9rem;
-            color: #999;
-            margin-bottom: 15px;
-            display: block;
+        .threads-btn:hover {
+            background-color: #f8f9fa;
+            transform: scale(1.02);
+        }
+
+        i {
+            font-size: 1.3rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>YueYueRich</h1>
+        <h1>YueYueRich App</h1>
         <p class="subtitle">台股記帳小幫手</p>
         
         <a class="btn apple-btn" href="https://apps.apple.com/ee/app/%E5%8F%B0%E8%82%A1%E8%A8%98%E5%B8%B3%E5%B0%8F%E5%B9%AB%E6%89%8B/id6738286951" target="_blank">
@@ -80,18 +88,10 @@
             在 App Store 下載
         </a>
 
-        <div class="embed-section">
-            <span class="embed-title">最新動態</span>
-            
-            <blockquote class="threads-embed" 
-                data-request_type="post" 
-                data-pid="C6X06sAWnb_" 
-                data-base_url="https://www.threads.net">
-                <a href="https://www.threads.net/@homiumiu_68/post/C6X06sAWnb_">載入中... 或是點此查看最新更新</a>
-            </blockquote>
-        </div>
+        <a class="btn threads-btn" href="https://www.threads.net/@homiumiu_68" target="_blank">
+            <i class="fa-brands fa-threads"></i>
+            或是到 Thread 留言或是查看最新更新
+        </a>
     </div>
-
-    <script async src="https://www.threads.net/embed.js"></script>
 </body>
 </html>
